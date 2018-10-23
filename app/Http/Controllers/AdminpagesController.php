@@ -7,6 +7,7 @@ use App\Booking;
 
 class AdminpagesController extends Controller
 {
+
     //
     public function viewit ()
     {
@@ -17,4 +18,5 @@ class AdminpagesController extends Controller
     public function adminlogin(){
         return redirect('/booking');
     }
+    
 }

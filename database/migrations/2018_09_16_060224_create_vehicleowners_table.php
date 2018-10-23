@@ -21,6 +21,8 @@ class CreateVehicleownersTable extends Migration
             $table->integer('contact');
             $table->string('email');
             $table->timestamps();
+
+            
         });
     }
 

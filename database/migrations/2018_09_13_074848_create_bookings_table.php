@@ -27,10 +27,19 @@ class CreateBookingsTable extends Migration
             $table->string('email');
             $table->string('address1');
             $table->string('address2');
-
-
-
+            $table->string('vehicle_id');
+            $table->string('driver_id');
             $table->timestamps();
+
+            $table->foreign('vehicle_id')
+                    ->references('id')
+                    ->on('vehicles');
+
+            $table->foreign('driver_id')
+                    ->references('id')
+                    ->on('drivers');
+
+
         });
     }
 

@@ -11,9 +11,7 @@
 
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse justify-content-center" id="basicExampleNav">
-
-        <!-- Links -->
-        <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home
                     <span class="sr-only">(current)</span>
@@ -34,11 +32,7 @@
                 <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
                 </li>
-                 @if (Auth::guest())
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/register') }}">Register</a></li>
-                    @else 
-                         <!--<li class="dropdown">
+                 <li class="dropdown">
                             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
@@ -46,15 +40,6 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
-                        </li> -->
-                    @endif
-                
-    
-                <!-- Right navbar elements -->
-                
-                <!-- right nav bar elements -->
-                
-        </ul>
-        <!-- Links -->
-    </div>
+                        </li>
+    </ul>
 </nav>

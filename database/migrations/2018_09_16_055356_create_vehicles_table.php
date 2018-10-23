@@ -20,7 +20,12 @@ class CreateVehiclesTable extends Migration
             $table->string('type');
             $table->float('price');
             $table->string('category');
+            $table->string('vowner_id');
             $table->timestamps();
+
+            $table->foreign('vowner_id')
+                    ->references('id')
+                    ->on('users');
         });
     }
 
