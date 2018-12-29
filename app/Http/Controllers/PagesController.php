@@ -31,4 +31,8 @@ class PagesController extends Controller
     public function vehiclesent(){
         return view('admin.pages.sentvehicle');
     }
+
+    public function listcar(){
+        return view('vehicleOwner.ownerhome');
+    }
 }

@@ -17,6 +17,7 @@ class AddCoverImageToPosts extends Migration
         Schema::table('vehicles',function($table){
             $table->string('cover_image');
         });
+       
     }
 
     /**

@@ -16,7 +16,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('piklocation');
-            $table->string('piktime');
+            $table->string('piktime')->nullable();
             $table->string('droplocation');
             $table->string('date');
             $table->string('days');

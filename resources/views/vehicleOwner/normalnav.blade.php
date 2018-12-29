@@ -8,16 +8,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
+          <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">My Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#form">List your car</a>
+              <a class="nav-link js-scroll-trigger" href="{{ url('/vowner') }}">List your car</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link js-scroll-trigger" href="{{ url('/viewvehicle') }}">Vehicles</a>
             </li>
             <!-- Authentication Links -->
@@ -39,14 +39,3 @@
         </div>
       </div>
     </nav>
-
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">Let your car</div>
-          <div class="intro-heading text-uppercase">Work for you</div>
-          
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#form">List your car</a>
-        </div>
-      </div>
-    </header>

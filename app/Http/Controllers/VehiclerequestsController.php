@@ -1,24 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Vehicle;
+use App\vehiclerequests;
 use Illuminate\Http\Request;
 
-class VehiclesController extends Controller
+class VehicleRequestsController extends Controller
 {
-    public function __construct()
+public function __construct()
     {
         $this->middleware('auth');
     }
 
-    public function index(){
-        $vehicles= Vehicle::all();
-        return view('admin.pages.vehiclefleet')->with('vehicle',$vehicles);
+    
+    public function index()
+    {
+        return view('vehicleOwner.ownerhome');
     }
-    public function addvehicle(){
-        return view('admin.pages.addvehicle');
-    }
-    public function tostore (Request $request){
+
+   public function tostore (Request $request){
         $this->validate($request,[
             'cover_image'=>'image|nullable|max:1999'
         ]);
@@ -38,22 +37,20 @@ class VehiclesController extends Controller
     }
 
 
-            $vehicle =new Vehicle;
+            $vehicle =new vehiclerequests;
+            $vehicle->name=$request->input('name');
+            $vehicle->email=$request->input('email');
+            $vehicle->regno=$request->input('regno');
+            $vehicle->address=$request->input('address');
             $vehicle->regno=$request->input('regno');
             $vehicle->plateno=$request->input('plateno');
             $vehicle->type=$request->input('type');
-            $vehicle->price=$request->input('price');
             $vehicle->category=$request->input('category');
+           // $vehicle->vowner_id=\Auth::id();
             $vehicle->cover_image=$fileNameToStore;
 
     
             $vehicle->save();
-            return redirect('/addvehicles');
+            return redirect('/vowner');
     }
-    public function viewvehicle() {
-        $vehicle = Vehicle::where('vowner_id', \Auth::user()->id)->get();
-        return view ('vehicleOwner.viewvehicle')->with('vehicles',$vehicle);
-    }
-
-    
 }

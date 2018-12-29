@@ -16,6 +16,10 @@ Route::get('/about','PagesController@about');
 Route::get('/cars','PagesController@cars');
 Route::get('/contact','PagesController@contact');
 Route::get('/services','PagesController@services');
+
+Route::get('/viewvehicle','VehiclesController@viewvehicle');
+Route::get('/listcar','PagesController@listcar');
+
 Route::get('/team','PagesController@team');
 Route::get('/vehicleselect','PagesController@vehicleselect');
 Route::get('/sent','PagesController@vehiclesent');
@@ -36,7 +40,6 @@ Route::get('/sentvehicles','SentvehiclesController@index');
  Route::POST('/addvehicles',['uses'=>'VehiclesController@tostore']);
 
 
-
  //Route::get('/login','AdminpagesController@login');
 
 
@@ -50,5 +53,6 @@ Route::get('/admin', 'HomeController@admin_index')->name('home');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/vowner', 'HomeController@vowner')->name('home');
-
+//Route::get('/vowner', 'HomeController@vowner')->name('home');
+Route::get('/vowner', 'VehiclerequestsController@index')->name('home');
+Route::POST('/vowner',['uses'=>'VehiclerequestsController@tostore']);
